@@ -1,0 +1,133 @@
+Briefing:
+Projeto: Connect_Commerce, um aplicativo móvel para comércios.
+Objetivo: Desenvolvimento de um aplicativo móvel que permite aos comércios realizarem o cadastro de produtos, gerenciar estoques, registrar pedidos, efetuar vendas com diferentes métodos de pagamento, incluindo cartão e dinheiro, oferecendo a funcionalidade de vendas a crédito (fiado), cadastrar clientes, e gerar relatórios de estoque, vendas e clientes com débitos.
+
+Descrição: O aplicativo móvel será uma ferramenta essencial para comercios locais (pequenos comercios) gerenciarem suas operações de forma mais dinâmica e eficiente. Permitindo o cadastro de produtos, controle de estoque, registro de pedidos via mensagem, venda de produtos com opção de pagamento via cartão ou dinheiro, opção de venda a crédito (fiado) para clientes recorrentes, cadastro de clientes e geração de relatórios relacionados ao estoque, vendas e clientes.
+
+Publico-alvo: Negócios locais (pequenos comércios), como lojas de conveniência, mercearias e padarias.
+
+Principais funcionalidades:
+-> Cadastro de produtos;
+-> Entrada de estoque de produtos;
+-> Pedidos via mensagem;
+-> Vendas com cartão e dinheiro;
+-> Função de pendurar (fiado);
+-> Cadastro de clientes;
+-> Geração de relatórios (estoque, vendas, clientes em débito);
+
+Levantamento de requisitos:
+Requisitos Funcionais:
+1. Cadastro de Produtos
+* O sistema deve permitir que o usuário cadastre produtos com nome, descrição e preço.
+2. Entrada de Estoque de Produtos
+* O usuário deve ser capaz de registrar a entrada de novos produtos no estoque, especificando a quantidade.   
+3. Pedidos Via Mensagem
+* Os clientes devem poder fazer pedidos através de mensagens, incluindo a lista de produtos desejados.
+4. Vendas
+* O sistema deve permitir a realização de vendas, incluindo seleção de produtos e quantidade.
+5. Pagamento com Cartão e Dinheiro
+* O sistema deve suportar pagamentos tanto com cartão de crédito quanto em dinheiro.
+6. Função Pendurar (Fiado) 
+* Deve haver uma opção para registrar vendas a crédito (fiado) para clientes, permitindo o pagamento posterior.
+7. Cadastro de Clientes
+* Os clientes podem ser cadastrados com informações como nome, contato e limite de crédito.
+8. Geração de Relatórios
+* O sistema deve ser capaz de gerar relatórios de estoque, vendas e clientes com débitos.
+
+Requisitos Não Funcionais:
+1. Usabilidade
+* A interface do aplicativo deve ser intuitiva e fácil de usar para proprietários de pequenos comércios.
+2. Performance
+* O aplicativo deve ser responsivo e rápido na realização de ações básicas.
+3. Segurança 
+* Os dados dos clientes e as informações financeiras devem ser mantidos em sigilo e protegidos contra acessos não autorizados.
+
+Diagrama de Casos de Uso: 
+  +---------------------------------------+
+  |          Aplicativo Móvel             |
+  +---------------------------------------+
+  |  - Cadastrar Produto                  |
+  |  - Registrar Entrada de Estoque       |
+  |  - Fazer Pedido via Mensagem          |
+  |  - Realizar Venda                     |
+  |  - Efetuar Pagamento                  |
+  |  - Realizar Venda a Crédito (Fiado)   |
+  |  - Cadastrar Cliente                  |
+  |  - Gerar Relatórios                   |
+  +---------------------------------------+
+
+Descrição de Casos de Uso:
+Caso de Uso: Cadastrar Produto
+* Ator Principal: Dono do Comércio.
+* Pré-condições: O ator está autenticado no aplicativo.
+* Fluxo Principal: 
+1. O ator seleciona a opção de cadastrar um novo produto.
+2. O ator insere nome, descrição e preço do produto.
+3. O sistema registra o produto no banco de dados.
+4. O sistema exibe uma mensagem de confirmação.
+
+Caso de Uso: Fazer Pedido Via Mensagem
+* Ator Principal: Cliente.
+* Pré-condições: O cliente está registrado no sistema. 
+* Fluxo Principal: 
+1. O cliente envia uma mensagem ao comércio com a lista de produtos desejados.
+2. O sistema registra o pedido e notifica o comércio.
+3. O comércio responde com a confirmação do pedido e o valor total.
+4. O cliente confirma o pedido.
+5. O sistema registra o pedido como confirmado e gera uma fatura.
+
+Caso de Uso: Registrar Entrada de Estoque 
+* Ator Principal: Dono do Comércio. 
+* Pré-condições: O autor está autenticado no aplicativo.
+* Fluxo Principal: 
+1. O ator seleciona a opção de registrar entrada de estoque.
+2. O ator escolhe o produto que está entrando em estoque.
+3. O ator insere a quantidade de produtos que estão sendo adicionados.
+4. O sistema atualiza o estoque do produto no banco de dados. 
+5. O sistema exibe uma mensagem de confirmação.
+-> Pré-condições: O ator principal (dono do comércio) está autenticado no aplicativo e possui permissão para resgistrar entradas de estoque. O produto a ser registrado já está cadastrado no sistema.
+-> Pós-condições: O estoque do produto é atualizado com a quantidade registrada na entrada.
+
+Caso de Uso: Realizar Venda
+*Ator Principal: Dono do Comércio ou Atendente do Comércio.
+* Pré-condições: O ator está autenticado no aplicativo.
+* Fluxo Principal:
+1. O ator inicia uma nova venda.
+2. O ator seleciona os produtos vendidos e suas quantidades.
+3. O sistema calcula o total da venda.
+4. O ator seleciona o método de pagamento (cartão, dinheiro ou fiado).
+5. O sistema regista a venda e atualiza o estoque.
+6. O sistema emite um recibo de venda.
+7. O sistema exibe uma mensagem de confirmação.
+-> Pré-condições: O ator principal (atendente do comércio) está autenticado/a no aplicativo e possui permissão para realizar vendas. Os produtos a serem vendidos estão cadastrados no sistema e tem quantidade disponível em estoque.
+-> Pós-condições: O estoque dos produtos vendidos é atualizado, a venda é registrada no sistema e um recibo da venda é gerado.
+
+Caso de Uso: Efetuar Pagamento
+* Ator Principal: Cliente
+* Pré-condições: O cliente possui débito registrado no sistema.
+* Fluxo Principal:
+1. O cliente solicita efetuar o pagamento do débito;
+2. O sistema exibe o valor total do débito;
+3. O cliente seleciona o método de pagamento (catão ou dinheiro);
+4. O sistema registra o pagamento e atualiza o débito do cliente;
+5. O sistema emite um recibo do pagamento;
+6.O sistema exibe uma mensagem de confirmação.
+-> Pré-condições: O ator principal (cliente) possui um débito registrado no sistema e o valor do débito é maior que zero.
+-> Pós-condições: O valor do débito do cliente é atualizado após o pagamento, e um recibo do pagamento é gerado e registrado no sistema.
+
+Caso de Uso: Gerar Relatórios
+* Ator Principal: Dono do Comércio ou um analista.
+* Pré-condições: O ator está validado/autenticado no aplicativo.
+*Fluxo Principal: 
+1. O ator seleciona a opção de gerar relatórios;
+2. O ator escolhe o tipo de relatório desejado (estoque, vendas, clientes em débito);
+3. O sistema gera o relatório solicitado com os dados relevantes;
+4. O sistema exibe o relatório/dashboard na tela;
+5. O sistema oferece a opção de exportar o relatório em formato digital;
+6. O sistema exibe uma mensagem de confirmação.
+-> Pré-condições: O ator principal (dono do comércio) está autenticado no aplicativo e possui permissão para gerar relatórios.
+-> Pós condições: O relatório é gerado com as informações solicitadas e ode ser visualizado na tela. Se o ator optar por exportar o relatório, um arquivo digital é gerado no formato escolhido.s
+
+Visto isso, através da documentação dos casos de uso do aplicativo de comércio, foi possível mapear de forma detalhada as principais funcionalidades e interações do sistema. A integração entre os requisitos do cliente, a metodologia SCRUM e a modelagem de casos de uso proporcionam uma visão clara e abrangente do projeto. Esses documentos fornecem as diretrizes necessárias para o desenvolvimento eficiente do aplicativo, garantindo que as necessidades dos usuários sejam atendidas e que o produto final seja de alta qualidade. Segundo Mello (2010, p.2), "[...]o levantamento de requisitos é uma das partes mais importantes do processo que resultará no desenvolvimento de um sistema". Através do Briefing, foi possível entender as principais características e objetivos do aplicativo (definindo o contexto e os requisitos iniciais do projeto), com o levantamento de requisitos, detalhamos as funcionalidades, regras de negócio e prioridades, criando uma base sólida para a elaboração dos casos de uso.
+
+A construção do Diagrama de Casos de Uso permitiu uma visualização clara dos atores e suas interações com o sistema, estabelecendo os fluxos principais e alternativos das funcionalidades. A descrição dos casos de uso trouxe um nível de detealhamento maior, especificando passo a passo como cada funcionalidade deve ser executada, além de contemplar os cenários alternativos e as pré-condições e pós-condições. Com essa documentação completa e integrada, a equipe de desenvolvimento estará pronta para seguir em frente, transformando os requisitos em código e entregando um aplicativo que atenda às necessidades do comércio, sendo extremamente eficaz para os usuários e consequentemente, gerando resultados positivos. O ciclo de desenvolvimento agora segue com a implementação das funcionalidades, a realização de testes, a iteração com o cliente e a busca pela excelência no produto final, esta foi uma solução criada visando uma maior produtividade, atenciosamente, João Teves.

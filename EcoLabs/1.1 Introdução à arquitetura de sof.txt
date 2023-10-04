@@ -1,0 +1,166 @@
+1.1 Introdução à arquitetura de software
+Você sabe qual o propósito da arquitetura de software? Segundo Galloti (2016, p. 3), é o de “criar soluções [...] cada vez mais simples, rápidas e eficientes”. Além do exposto pelo autor, devemos ir além, ou seja, não somente resolver problemas, mas também prevenir a ocorrência deles e aperfeiçoar as soluções já existentes.
+
+A história recente da Ciência da Computação mostra a evolução das técnicas e dos métodos de desenvolvimento de sistemas, passando pela programação estruturada, orientada a evento até a orientação a objeto, assim como a evolução da lógica dos algoritmos e da estrutura de dados.
+
+Diante da complexidade dos sistemas atuais, é inevitável que tenhamos estilos de arquitetura acompanhando tal evolução. É necessário ter um conhecimento bastante sólido dos fundamentos e conceitos básicos da arquitetura de software para compreender a evolução dos sistemas de informação e a estruturação lógica e abstrata deles, além de desenvolvê-los com confiabilidade e alta qualidade.
+
+1.1.1 Conceitos introdutórios de arquitetura de software
+Qual o sentido fundamental de arquitetura de software? Para Galloti (2016, p. 10), ela “[...] explica a forma como [ele] se organiza e funciona, além de seu modo de implementação”. Portanto, agrega os componentes denominados elementos arquiteturais (dados, processamentos e conexão), que se organizam de maneira lógica para atender aos requisitos funcionais e não funcionais. Para tal, a arquitetura de software deve ser clara, a fim de atingir o máximo da simplicidade, tendo o software as seguintes características:
+
+
+
+flexível: deve permitir as mudanças que se façam necessárias em decorrência das alterações de requisitos;
+extensível: deve ter a capacidade de incorporar novos elementos, permitindo que a estrutura do sistema como um todo se estenda;
+portabilidade: permite que ele seja executado em mais de uma plataforma;
+reutilizável: é possível adaptar componentes de um software para outro.
+
+
+O projeto de arquitetura é o primeiro passo no processo de implantação de um modelo de arquitetura de software: ele a conecta com a engenharia de requisitos – esta última é o processo que elabora os documentos dos requisitos funcionais e não funcionais durante todo o ciclo de vida do sistema. É nesta parte do processo que são identificados os componentes estruturais e os seus relacionamentos.
+
+A arquitetura de software se altera na mesma medida em que ele evolui e se ajusta às novas demandas e evoluções tecnológicas. Portanto, ela é parte integrante da engenharia de software, que é uma abordagem sistemática e formal de desenvolvimento dos sistemas de informação.
+
+Essas características fazem parte dos quesitos de qualidade, ou seja, é o conjunto de atributos que se espera de um software de alto desempenho. Podemos detalhá-las no quadro a seguir, segundo Sommerville (2011, p. 5).
+
+
+
+Quadro 1 - Atributos essenciais de qualidade de um software, sendo parte integrante da elaboração da arquitetura de um sistema de informação.Fonte: SOMMERVILLE, 2011, p. 5.
+#PraCegoVer: Contém uma tabela com os atributos essenciais de qualidade de um software, sendo parte integrante da elaboração da arquitetura de um sistema de informação. A tabela é composta de duas colunas denominadas, Características do produto e Descrição. A coluna Características do produto contém as linhas, sendo elas: Manutenibilidade, Confiança e proteção, Eficiência e, Aceitabilidade. A descrição de Manutenibilidade é: O software deve ser escrito de forma que possa evoluir para atender às necessidades dos clientes. Esse é um atributo crítico, porque a mudança de software é um requisito inevitável de um ambiente de negócio em mudança. A descrição de Confiança e proteção é: A confiança do software inclui uma série de características como confiabilidade, proteção e segurança. Um software confiável não deve causar prejuízos físicos ou econômicos no caso de falha de sistema. Usuários maliciosos não devem ser capazes de acessar ou prejudicar o sistema. A descrição de Eficiência é: O software não deve desperdiçar os recursos do sistema, como memória e ciclos do processador. Portanto, eficiência inclui capacidade de resposta, tempo de processamento, uso de memória, entre outros. A descrição de Aceitabilidade é: O software deve ser aceitável para o tipo de usuário para qual foi projetado. Isso significa que deve ser compreensível, usável e compatível com outros sistemas usados por ele.
+
+
+Estas características terão maior ou menor relevância dependendo do propósito do software e do contexto no qual ele está inserido. Por exemplo, softwares de transações informacionais básicas (como, por exemplo, um sistema de cadastro de clientes de uma loja) terão atributos de qualidade diferentes de sistemas mais complexos como, por exemplo, um software de controle de uma fábrica. No primeiro caso, o foco do sistema estará mais atrelado à interface do cliente, e fatores como usabilidade e acessibilidade serão mais críticos. Por outro lado, nos sistemas de controle industrial, por exemplo, os atributos de confiança e proteção serão mais críticos devido à natureza e finalidade deste sistema.
+
+Nesse sentido, existem abordagens para que os softwares sejam tipificados conforme sua aplicabilidade e natureza, sendo fundamentais ao construirmos o projeto de arquitetura de um sistema, pois estes fatores impactam quando modelamos o desenho dos componentes e suas relações com o fluxo de dados nos quais haverá alguma interação.
+
+Como explicamos, as abordagens de desenvolvimento variam conforme o objetivo do sistema e o ambiente no qual ele é desenvolvido. O fator mais importante para determinar quais são as técnicas e os métodos de engenharia de software é o tipo de aplicação que, segundo Sommerville (2011, p. 7, grifos nossos), podem ser identificados como:
+
+Aplicações stand-alone. Essas são as aplicações executadas em um computador local, como um PC. Elas contêm toda a funcionalidade necessária e não precisam estar conectadas a uma rede.
+Aplicações interativas baseadas em transações. São aplicações que executam em um computador remoto, acessadas pelos usuários a partir de seus computadores ou terminais. Certamente, aqui são incluídas aplicações Web como aplicações de comércio.
+Sistemas de controle embutidos. São sistemas de controle que controlam e gerenciam dispositivos de hardware. Exemplos de sistemas embutidos é o software em telefone celular ou que controlam antitravamento de freios em um carro.
+Sistemas de processamento de lotes. São sistemas corporativos projetados para processar dados em grandes lotes. Exemplos de sistemas de lotes incluem sistemas periódicos de cobrança, como sistemas de cobrança telefônica, e sistemas de pagamentos de salário.
+Sistemas de entretenimento. São sistemas cuja utilização principal é pessoal e cujo objetivo é entreter o usuário.
+Sistemas para modelagem e simulação. São sistemas que incluem vários objetos separados que interagem entre si, desenvolvidos por cientistas e engenheiros para modelar processos ou situações físicas.
+Sistemas de coleta de dados. São sistemas que coletam dados de seu ambiente com um conjunto de sensores e enviam esses dados para outros sistemas para processamento.
+Sistemas de sistemas. São sistemas compostos de uma série de outros sistemas de software. Alguns deles podem ser produtos genéricos de software, como um programa de planilha eletrônica.
+Tendo como base as tipificações definidas anteriormente, é necessário definir como são classificados os modelos de processo de desenvolvimento de software, isto é, a representação, de forma simplificada, de um determinado processo específico. Segundo Sommerville (2011, p. 20, grifos nossos), os modelos são englobados em três tipos:
+
+em cascata. Este modelo determina as atividades principais do processo de especificação, desenvolvimento, validação e evolução, sendo que cada uma das partes do modelo são consideradas fases distintas.
+desenvolvimento incremental. Este modelo integra as atividades de especificação, desenvolvimento e validação, porém é desenvolvido como sendo uma série de versões - ou incrementos - sendo que cada versão agrega novas funcionalidades à versão anterior.
+engenharia de software orientada a reuso. Esta abordagem considera um número considerável de componentes reusáveis.
+A partir das tipificações de sistemas e dos modelos de processo de desenvolvimento, são definidos os níveis e aquilo que é considerado a decomposição da arquitetura de software – esta, segundo Sommerville (2011, p. 104), é necessária para organizar e estruturar a especificação da arquitetura do sistema, sendo útil no momento em que se realiza o levantamento dos requisitos junto aos envolvidos no desenvolvimento do sistema. Podemos projetar a arquitetura de software em dois níveis de abstração, segundo Sommerville (2011, p. 104, grifos nossos):
+
+A arquitetura em pequena escala está preocupada com a arquitetura de programas individuais. Nesse nível, estamos preocupados com a maneira como um programa individual é decomposto em componentes.
+A arquitetura em grande escala preocupa-se com a arquitetura de sistemas corporativos complexos que incluem outros sistemas, programas e componentes de programas. Esses sistemas empresariais estão distribuídos por diversos computadores, que podem pertencer e ser geridos por diferentes empresas
+Desenhar a arquitetura de software é fundamental, portanto, para o desenvolvimento de um sistema, pois integra o desempenho, a robustez e a capacidade do sistema de sua manutenibilidade.
+
+
+Existem arquiteturas de softwares com diversas abordagens, inclusive as que são orientadas para a avaliação do processo de ensino-aprendizagem de forma contínua. Esta, inclusive, é bastante criativa e interessante, e foi desenvolvida em uma pesquisa feita pelos autores Cunha; Filgueira; Viana (2017). Leia mais em: <https://www2.ifrn.edu.br/ojs/index.php/HOLOS/article/view/5335/pdf>.
+
+As arquiteturas de software geralmente são modeladas usando diagramas de blocos simples, nos quais cada caixa representa um componente. Quando são representadas caixas dentro de caixas significa que o componente foi decomposto em subcomponentes. Por outro lado, as setas indicam que os dados são passados de um componente ao outro. Um exemplo de representação de uma arquitetura de software utilizando diagrama de blocos é representado na figura a seguir, que elabora um controle robotizado de empacotamento.
+
+
+
+Figura 1 - Arquitetura de um sistema de controle robotizado de empacotamento, indicando os componentes, os subcomponentes e a transação de dados.Fonte: Elaborada pelo autor, adaptado de SOMMERVILLE, 2011.
+#PraCegoVer: Ilustra a arquitetura de um sistema de controle robotizado de empacotamento, indicando os componentes, os subcomponentes e a transação de dados. A ilustração contém o componente Sistema de Visão que aponta para o componente Sistema de identificação de objetos e para os subcomponentes Controlador de Braço e Controle de Garra. Estes subcomponentes também são apontados pelo componente Sistemas de Identificação de Objetos, que por sua vez, também aponta para os subcomponentes Sistema de Seleção de Empacotamento e, Sistema de Empacotamento. Estes subcomponentes apontam para o componente Controlador de Esteira.
+
+
+Os diagramas de blocos representam a arquitetura de um software e apresentam uma visão de alto nível da estrutura do sistema, sendo que os usuários de diferentes áreas que estão envolvidos no processo de desenvolvimento podem compreender a organização dos componentes, suas relações e a transação de dados.
+
+1.1.2 Descrições de arquitetura
+Quais são as visões e descrições que são necessárias ao se projetar uma arquitetura de sistema? Quais notações devem ser usadas com o objetivo de se descrever os modelos de arquitetura? É necessário considerar que é impossível representar todas as informações relevantes da arquitetura de software em um único modelo, porque cada modelo representa uma perspectiva do sistema. Portanto, são necessários vários deles para conceber a arquitetura na sua totalidade. Os autores da área de arquitetura e engenharia de software propõem que devemos ter quatro visões fundamentais, as quais, segundo Sommerville (2011, p. 107, grifos nossos), são:
+
+lógica, que mostra as abstrações fundamentais do sistema como objetos ou classes de objetos. Nessa visão, deveria ser possível relacionar os requisitos de sistema com as entidades.
+de processo, que mostra como, no tempo de execução, o sistema é composto de processos interativos. Essa visão é útil para fazer julgamentos sobre as características não funcionais do sistema, como desempenho e disponibilidade.
+de desenvolvimento, que mostra como o software é decomposto para o desenvolvimento, ou seja, apresenta a distribuição do software em componentes que são implementados por um único desenvolvedor ou por uma equipe de desenvolvimento. Essa visão é útil para gerentes de software e programadores.
+física, que mostra o hardware do sistema e como os componentes de software são distribuídos entre os processadores. Essa visão é útil para os engenheiros de sistemas que estão planejando uma implantação do sistema.
+Hofmeister; Nord; Soni (2000) argumentam que é necessário, também, incluir uma visão conceitual, pois ela pode servir como uma decomposição dos requisitos de um nível mais alto para um mais detalhado. Essa ferramenta é fundamental para a administração da complexidade do sistema, porque pode esconder detalhes, permitindo que os desenvolvedores se concentrem no nível de abstrações do sistema.
+
+
+A internet das coisas é uma revolução tecnológica recente que tem como objetivo conectar os itens – ou seja, as coisas – utilizados no dia a dia com a internet. Cagnin (2015) desenvolveu sua dissertação propondo uma arquitetura de software denominada de “Uma arquitetura multiagente para o gerenciamento de dispositivos em ambientes da internet das coisas”. Veja mais em: <http://www.athena.biblioteca.unesp.br/exlibris/bd/cathedra/02-08-2017/000868971.pdf>.
+
+Uma das possíveis visões que podem servir de referência para a construção da arquitetura de um sistema é a Unified Modeling Language (UML), uma linguagem de modelagem que serve para definir artefatos que auxiliam na tarefa de desenhar e documentar os sistemas, sendo composta por diversos diagramas que compõem a estrutura do projeto de arquitetura do sistema. Segundo Galloti (2016, p. 81, grifos nossos), os diagramas UML são de:
+
+Caso de Uso. Este diagrama define o grupo de comportamentos no alto nível do sistema e como deve ser executado para um determinado ator.
+Classes. Este diagrama representa a coleção de classes e define seus inter-relacionamentos.
+Objetos. Este diagrama visa mostrar em forma de um retrato os objetos do software e seus inter-relacionamentos.
+Colaboração. Este diagrama figura uma coleção de objetos que trabalham conjuntamente para atender o comportamento do sistema.
+Sequência. Representa uma perspectiva que é orientada por tempo, da colaboração existente entre os objetos.
+Atividades. Este diagrama mostra o fluxo das tarefas que são executadas pelo sistema ou por um determinado ator.
+Estados. Este diagrama mostra um conjunto de estados de um objeto pode ter e os ‘gatilhos’ que fazem a transição do objeto de um determinado estado para outro.
+Componentes. Representa uma coleção de componentes pertinentes ao sistema e seus inter-relacionamentos.
+Depuração. Este diagrama mostra um conjunto de componentes e como eles são distribuídos nos nós de hardware.
+Pacotes. Mostra uma coleção de outros possíveis elementos de modelagem ou de diagramas.
+Alguns autores têm opiniões divergentes pelo uso da UML para a construção da arquitetura de software, pois às vezes ela é usada de forma inadequada para demonstrar o comportamento dos componentes do sistema e suas relações. Sua utilização – ou não – dependerá do nível de experiência do desenvolvedor e da complexidade do sistema que se está implementando. Por outro lado, vários pesquisadores indicam o uso de linguagens de descrição de arquitetura (Architectural Description Languages, as ADLs) para apresentá-la. Os elementos fundamentais das ADLs são os componentes e conectores, que agregam regras e diretrizes para a arquitetura do sistema.
+
+1.2 Gêneros e estilos de arquitetura
+Podemos conceituar o projeto de arquitetura, segundo Sommerville (2011, p. 105), como “[...] um processo criativo no qual você projeta uma organização de sistema para satisfazer aos requisitos funcionais e não funcionais de um sistema”. Baseando-nos na afirmativa do autor, podemos perguntar: existe uma arquitetura genérica que pode atuar como um modelo para o sistema que está sendo projetado? Quais gêneros ou estilos de arquitetura podem ser usados?
+
+O que temos é que, durante o processo de projeto de arquitetura, os desenvolvedores precisam tomar várias decisões estruturais que podem afetar de forma significativa o sistema e todo o seu processo de desenvolvimento. Segundo Sommerville (2011, p. 106), “um padrão de arquitetura é uma descrição abstrata de boas práticas vivenciadas e testadas em diferentes ambientes e sistemas”, logo ele deve descrever a organização de um sistema que foi bem-sucedida e incluir informações de quando o uso desse padrão é adequado, incluindo os pontos fortes e fracos. A seguir, descreveremos os padrões existentes na arquitetura de software com exemplos e situações em que são utilizados, bem como suas vantagens e desvantagens.
+
+A arquitetura de um software pode ser baseada em um determinado padrão ou estilo. Um padrão de arquitetura significa como o software é organizado: por exemplo, existe o padrão de organização cliente-servidor e um padrão de arquitetura em camadas. Esses padrões mostram o objetivo de uma arquitetura que foi utilizada em sistemas de software diferenciados. Nesse sentido, o desenvolvedor, ao tomar decisões sobre qual a arquitetura de um sistema, deve conhecer os padrões mais comuns e saber onde eles podem ser usados e quais são seus prós e contras.
+
+É necessário que o desenvolvedor saiba escolher a estrutura que mais se adequa às necessidades do sistema a ser desenvolvido, como a arquitetura cliente-servidor ou a em camadas, que seja capaz de permitir o atingimento dos requisitos do sistema. Para que se decomponham em unidades estruturais do sistema, o desenvolvedor deverá decidir sobre qual a estratégia utilizada para a decomposição de componentes em seus subcomponentes. As abordagens que podem ser usadas devem permitir a implantação de tipos distintos de arquitetura.
+
+Por fim, ao chegar ao processo de modelagem de controle, é necessário tomar decisões sobre como a execução dos componentes do sistema é controlada. Ou seja, se desenvolve um modelo de visão mais alta dos relacionamentos de controle entre as diversas unidades do sistema. Segundo Sommerville (2011, p. 106, grifos nossos), devem ser analisados os seguintes requisitos para que se faça a escolha do estilo de arquitetura:
+
+Desempenho. Se o desempenho for um requisito crítico, a arquitetura deve ser projetada para localizar as operações críticas dentro de um pequeno número de componentes.
+Proteção. Se a proteção for um requisito crítico, deve ser usada uma estrutura em camadas para a arquitetura, com os ativos mais críticos protegidos nas camadas mais internas.
+Segurança. Se a segurança for um requisito crítico, a arquitetura deve ser concebida de modo que as operações relacionadas com a segurança estejam localizadas em um único componente.
+Disponibilidade. Se a disponibilidade for um requisito crítico, a arquitetura deve ser projetada para incluir componentes redundantes.
+Manutenção. Se a manutenção for um requisito crítico, a arquitetura do sistema deve ser projetada a partir de componentes autocontidos de baixa granularidade que podem ser rapidamente alterados.
+Para Pressman (2016), apesar de os princípios do projeto de arquitetura de software se aplicarem a todos os tipos de sistemas, o gênero ditará a abordagem específica para a estrutura que deve ser construída, isto é, uma categoria específica no domínio de software de forma geral, sendo que em cada categoria podem ser enquadradas subcategorias. Segundo Pressman (2016, p. 233, grifos nossos), podemos ter os seguintes gêneros de arquitetura:
+
+Inteligência artificial – sistemas que simulam a cognição.
+Comercial e sem fins lucrativos – sistemas para operação de empreendimento.
+Comunicações – sistema para infraestrutura e gerenciamento de dados.
+Autoria de conteúdo – sistemas para controlar artefatos.
+Dispositivos – sistemas que interagem com o mundo físico.
+Esportes e entretenimento – sistemas que gerenciam eventos públicos.
+Financeiros – sistemas para gerenciar movimentações financeiras.
+Jogos – sistemas que geram experiência de entretenimento.
+Governo – sistemas que dão apoio às entidades governamentais.
+Industriais – sistemas que controlam processos físicos.
+Legais – sistemas que dão apoio jurídico.
+Médicos – sistemas de diagnóstico.
+Militar – sistemas de controle de inteligência militar.
+Sistemas operacionais – sistemas que se situam acima do hardware.
+Plataformas – sistemas que posicionam acima dos sistemas operacionais.
+Científicos – sistemas utilizados para pesquisa.
+Ferramentas – sistemas utilizados para desenvolver outros sistemas.
+Transportes – sistemas que controlam veículos.
+Serviços públicos – sistemas para oferecer serviço à sociedade.
+Por outro lado, a questão de estilos na arquitetura de software descreve uma categoria de sistema: pode englobar um conjunto de componentes que realiza uma função que é exigida, ou diversos conectores e várias restrições que definem como os componentes interagirão. Seu objetivo é estabelecer uma estrutura única para todos os componentes do sistema e, de acordo com Pressman (2016), eles podem ser classificados como:
+
+
+
+arquitetura centralizada em dados: um repositório de dados reside no centro desta arquitetura e é, em geral, acessado por outros componentes. Observe-a na figura a seguir.
+
+
+Figura 2 - Arquitetura centralizada em dados demonstrando o depósito de dados e os softwares associados.Fonte: Elaborada pelo autor, baseado em PRESSMAN, 2016.
+#PraCegoVer: Ilustra a arquitetura centralizada em dados demonstrando o depósito de dados e os softwares associados. Ao centro existe um cilindro, representando o depósito de dados e ao redor, vários retângulos, representando os softwares que consomem e abastecem o depósito de dados.
+
+
+arquitetura de fluxo de dados: dados de entrada devem ser transformados por meio de uma série de componentes. Perceba-a na figura a seguir.
+
+
+Figura 3 - Arquitetura de fluxo de dados demonstrando os filtros de dados e os tubos associados.Fonte: Elaborada pelo autor, baseado em PRESSMAN, 2016.
+#PraCegoVer: Contém a ilustração da Arquitetura de fluxo de dados demonstrando os filtros de dados e os tubos associados. A imagem é composta por vários retângulos, contendo em seu interior a palavra Filtro, onde vários filtros apontam para vários filtros. As ligações entre estes filtros, são chamadas de tubos.
+
+
+arquitetura de chamadas e retornos: permite obter dados em programa principal e subprograma. Atente-a na figura a seguir.
+
+
+Figura 4 - Arquitetura de chamadas e retornos demonstrando o programa principal e subprogramas controladores e de aplicação.Fonte: Elaborada pelo autor, baseado em PRESSMAN, 2016.
+#PraCegoVer: Ilustra a arquitetura de chamadas e retornos, demonstrando o programa principal e subprogramas controladores e de aplicação. A imagem é composta por vários retângulos. Inicia com um retângulo contendo a inscrição Programa Principal. Em um nível inferior, há três retângulos contendo a inscrição Subprograma de Aplicação, que estão ligados ao Programa Principal e também, a outros subprogramas.
+
+
+arquitetura orientada a objetos: caracterizada pelos componentes terem os dados e as operações encapsulados.
+arquitetura em camadas: sua estrutura básica é definida em camadas distintas, que interagem em operações de forma progressiva. Observe-a na figura a seguir.
+
+
+Figura 5 - Arquitetura em camadas demonstrando as diversas camadas e os componentes associados a elas.Fonte: Elaborada pelo autor, baseado em PRESSMAN, 2016.
+#PraCegoVer: Ilustra a arquitetura em camadas demonstrando as diversas camadas e os componentes associados a elas. A imagem possui círculos, uns dentro dos outros, representando as camadas. Na camada mais interna está a Camada Central. Em direção mais externa, estão as camadas de utilitários, de aplicação e de interface do usuário, respectivamente.
+
+
+Mediante alguns estudos realizados nesta unidade, é notório que o diagrama de máquina de estados (também conhecido como diagrama de estados e transições), é uma ferramenta poderosa no campo de engenharia de software e da arquitetura de sistemas. É amplamente utilizado para representar o comportamento dinâmico de objetos ou entidades em um sistema, descrevendo os diferentes estados que essas entidades podem assumir e as transições entre esses estados em resposta a eventos ou gatilhos específicos (sua aplicação é especialmente relevante quando se trata de entender e modelar o ciclo de vida de entidades no contexto de um banco de dados de um sistema. Alem disso, o entendimento preciso dos estados possíveis de um objeto é fundamental para a construção de uma arquitetura de software robusta e livre de problemas.
+

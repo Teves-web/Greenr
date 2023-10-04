@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #00FF00;
+    color: black;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 1rem;
+}
+
+#restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.restaurant-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.restaurant-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.restaurant-card h2 {
+    margin: 0.5rem 0;
+}
+
+.restaurant-card p {
+    margin: 0.5rem 0;
+}
+
+/* Estilos do ranking */
+
+.ranking h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.ranking p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Estilos dos pedidos */
+
+#order-history h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.order-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.order-card p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.order-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-card li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 0.25rem;
+}
+
+.order-card p.total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00aaff;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav li {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Estilos dos pacotes de assinatura */
+
+.subscription-packages h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.package {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+
+.package h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.package p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00aaff;
+}
+
+/* Estilos de saída */
+
+#logout-message {
+    padding: 2rem;
+    border: 1px solid #00aaff;
+    background-color: rgba(0, 170, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#logout-message h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#logout-message p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav li {
+        margin: 0.5rem 0;
+    }
+}

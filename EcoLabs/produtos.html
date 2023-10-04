@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Adicione estilos de layout aqui */
+        .product-card {
+            display: inline-block;
+            width: calc(50% - 20px); /* Dividir a largura em 2 com margem de 20px entre eles */
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <title>Produtos Orgânicos - EcoLabs</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="pedidos.html">Meus Pedidos</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="sair.html">Sair</a></li>
+            </ul>
+        </nav>
+        <h1>Greenr</h1>
+    </header>
+    <main>
+        <section id="organic-products-list">
+            <h2>Produtos Orgânicos</h2>
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSslmwpC8kn6mlYKXCBqDGCcmDC72vXS_hk0A&usqp=CAU" alt="Produto Orgânico 1">
+                <h3>Maçãs Orgânicas</h3>
+                <p>Maçãs cultivadas de forma orgânica, sem o uso de pesticidas ou produtos químicos.</p>
+                <span class="price">$2.99/kg</span>
+                <button class="add-to-cart" onclick="redirectToOrders()">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product-card">
+                <img src="data:image/jpeg;base64,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" alt="Produto Orgânico 2">
+                <h3>Tomates Orgânicos</h3>
+                <p>Tomates suculentos cultivados de maneira natural, sem aditivos artificiais.</p>
+                <span class="price">$1.49/kg</span>
+                <button class="add-to-cart" onclick="redirectToOrders()">Adicionar ao Carrinho</button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+
